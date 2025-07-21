@@ -1,2 +1,0 @@
-MONGODB_URI=your_mongodb_atlas_connection_string
-WEBHOOK_SECRET=your_n8n_webhook_secret
