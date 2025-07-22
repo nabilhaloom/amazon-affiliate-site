@@ -1,7 +1,0 @@
-ecotechfinds/
-├── public/
-│   └── index.html (the HTML file above)
-├── functions/
-│   ├── affiliate-links.js
-│   └── analytics.js
-└── netlify.toml
