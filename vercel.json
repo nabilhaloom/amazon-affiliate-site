@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "public": "public",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/functions/$1"
+    }
+  ]
+}
