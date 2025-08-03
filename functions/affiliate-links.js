@@ -2,7 +2,7 @@
 exports.handler = async (event, context) => {
   // In production, this would connect to a database
   const affiliateLinks = {
-    "product1": "https://amzn.to/3xample1",
+    "product1": "https://amzn.to/4moL5gs",
     "product2": "https://amzn.to/3xample2",
     "product3": "https://amzn.to/3xample3",
     "product4": "https://amzn.to/3xample4",
