@@ -1,6 +1,6 @@
 body {
     background-color: blue;
-    color: white; /* Optional: Improves readability on blue background */
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    color: white; /* Ensures text is readable on blue */
+}
