@@ -1,6 +1,82 @@
+/* Modern styling with blue background and clean layout */
 body {
-    background-color: blue;
+    background: linear-gradient(135deg, #1a2980, #26d0ce);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
-    color: white; /* Ensures text is readable on blue */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(0, 0, 30, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.price-container {
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background-color: rgba(0, 0, 50, 0.5);
+    font-size: 1.2rem;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td:last-child {
+    font-weight: bold;
+    text-align: right;
+    font-size: 1.1rem;
+}
+
+p {
+    opacity: 0.8;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    th, td {
+        padding: 10px;
+    }
 }
