@@ -3,11 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Bitcoin Price Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <p>This is a sample webpage with a blue background.</p>
+    <div class="container">
+        <h1>Bitcoin Price Tracker</h1>
+        <div class="price-container">
+            <table id="bitcoin-data">
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Current Price</td>
+                    <td id="current-price">Loading...</td>
+                </tr>
+                <tr>
+                    <td>Market Cap</td>
+                    <td id="market-cap">Loading...</td>
+                </tr>
+                <tr>
+                    <td>24h Volume</td>
+                    <td id="volume">Loading...</td>
+                </tr>
+                <tr>
+                    <td>All-Time High</td>
+                    <td id="ath">Loading...</td>
+                </tr>
+            </table>
+        </div>
+        <p>Data updates every 10 seconds</p>
+    </div>
+    <script>
+        async function fetchBitcoinData() {
+            try {
+                const response = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin');
+                const data = await response.json();
+                
+                // Update table with real-time data
+                document.getElementById('current-price').textContent = 
+                    `$${data.market_data.current_price.usd.toLocaleString()}`;
+                
+                document.getElementById('market-cap').textContent = 
+                    `$${data.market_data.market_cap.usd.toLocaleString()}`;
+                
+                document.getElementById('volume').textContent = 
+                    `$${data.market_data.total_volume.usd.toLocaleString()}`;
+                
+                document.getElementById('ath').textContent = 
+                    `$${data.market_data.ath.usd.toLocaleString()}`;
+                
+            } catch (error) {
+                console.error('Error fetching Bitcoin data:', error);
+                document.querySelectorAll('#bitcoin-data td:last-child').forEach(td => {
+                    td.textContent = 'Error loading data';
+                });
+            }
+        }
+
+        // Fetch data on load and every 10 seconds
+        fetchBitcoinData();
+        setInterval(fetchBitcoinData, 10000);
+    </script>
 </body>
 </html>
